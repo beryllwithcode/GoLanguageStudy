@@ -82,8 +82,9 @@ atau jika ingin menjalankan suatu file tanpa compile, jalankan perintah: <br>
     }
 ```
 
-- Variable <br>
-Variable adalah tempat untuk menyimpan suatu data <br>
+<h3>Variable</h3> <br>
+
+- Variable adalah tempat untuk menyimpan suatu data. <br>
 Untuk membuat variable, kita dapat menggunakan keyword ``var``, kemudian di ikuti dengan nama variable dan tipe data.
 ```go
 // Example 1
@@ -102,5 +103,67 @@ Untuk membuat variable, kita dapat menggunakan keyword ``var``, kemudian di ikut
         fmt.Println(age) //output: 21
     }
 ```
+```go
+// Example 2
+
+    func main() {
+        //Assign value to variable name & age
+        name := "Beryll Pradana Ramadhan"
+        age := 21
+
+        //Print value of variable
+        fmt.Println(name) //output: Beryll Pradana Ramadhan
+        fmt.Println(age) //output: 21
+```
+```go
+// Example 3
+
+    func main() {
+        //Declaration Variable
+	var born, now
+
+	//Assign value to Variable born & now
+	born = 2003
+	now = 2024
+
+	//Print value of Variable
+	fmt.Println("I was born on ", born) //output: I was born on 2003
+	fmt.Println("My age is ", now - born) //output: My age is 21
+```
+
+- Multi Variable
+Go mendukung metode deklarasi banyak secara bersamaan, caranya adalah dengan menuliskan variable nya dengan pembatas tanda koma ( , ). Untuk pengisian value nya juga bisa secara bersamaan.
+```go
+// Example 1
+
+	var first, second, third string
+	first, second, third = "satu", "dua", "tiga" 
+```
+Dengan menggunakan teknik type inference, deklarasi multi variable bisa dilakukan untuk variable-variable yang memiliki tipe data yang berbeda.
+```go
+// Example 2
+
+	var one, isFriday, twoPointTwo, say
+	one, isFriday, twoPointTwo, say := 1, true, 2.2, "hello!"	
+```
+
+- Reserved Variable
+Variable _(Underscore), Go punya aturan yang cukup unik yang dimana mengharuskan harus menggunakan semua variable yang telah di deklarasikan, jika tidak maka akan terjadi error. Reserved Varianle biasa dimanfaatkan untuk menampung nilai yang tidak dipakai. Bisa di bilang variable ini merupakan keranjang sampah.
+```go
+_ = "Study Jam Golang"
+_ = "Belajar Golang itu Mudah!"
+name, _ = "Beryll", "Belajar Golang"
+```
+
+- Variable Declaration Using Keyword ``new``
+Fungsi ``new()`` digunakan untuk membuat variable pointer dengan tipe data tertentu. Nilai data default nya akan menyesuaikan dengan tipe datanya.
+```go
+name := new(string)
+
+fmt.Println(name) //output: 0x2081a220
+fmt.Pritnln(*name) //output: ""
+```
+Variable ``name`` menampung data bertipe pointer string. Jika ditampilkan yang muncul bukanlah nilai melainkan alamat memori nilai tersebut (dalam bentuk notasi heksadesimal). Untuk menampilkan nilai aslinya, variable tersebut perlu di Dereference terlebih dahulu, caranya dengan menuliskan tanda asterisk ( * ) sebelum nama variabel.
+
 
 <a href="https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html">Click untuk penjelasan lengkap nya!</a>
