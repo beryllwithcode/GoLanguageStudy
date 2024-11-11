@@ -82,7 +82,7 @@ atau jika ingin menjalankan suatu file tanpa compile, jalankan perintah: <br>
     }
 ```
 
-<h3>Variable</h3> <br>
+<h3>Variable</h3>
 
 - Variable adalah tempat untuk menyimpan suatu data. <br>
 Untuk membuat variable, kita dapat menggunakan keyword ``var``, kemudian di ikuti dengan nama variable dan tipe data.
