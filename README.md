@@ -165,5 +165,33 @@ fmt.Pritnln(*name) //output: ""
 ```
 Variable ``name`` menampung data bertipe pointer string. Jika ditampilkan yang muncul bukanlah nilai melainkan alamat memori nilai tersebut (dalam bentuk notasi heksadesimal). Untuk menampilkan nilai aslinya, variable tersebut perlu di Dereference terlebih dahulu, caranya dengan menuliskan tanda asterisk ( * ) sebelum nama variabel.
 
+<h3>Konstanta</h3>
+
+Konstanta adalah jenis variabel yang nilainya tidak bisa diubah setelah di deklarasikan. Inisialisasi nilai konstanta hanya di lakukan sekali saja di awal, setelah itu variable tidak bisa di ubah nilai nya. <br>
+Cara membuat sebuah variable konstanta sama seperti mendeklarasikan variable biasa, perbedaan nya hanya pada keyword yang di gunakan, yaitu ``const`` (bukan ``var``).
+```go
+const firstName string = Beryll
+fmt.Print("Halo nama saya ", firstName, "!\n") //output: Halo nama saya Beryll!
+```
+Teknik type inference juga bisa di terapkan pada konstanta, cara nya cukup dengan menghilangkan tipe data pada variable saat di deklarasikan.
+```go
+const firstName = Beryll
+const midName = Pradana
+const lastName = Ramadhan
+fmt.Print("Halo nama lengkap saya "), firstName, " ", midName, " ", lastName, "!\n" //output: Halo nama lengkap saya Beryll Pradana Ramadhan!
+```
+<br>
+Penggunaan fungsi ``fmt.Print()`` <br>
+Fungsi ini memiliki peran yang sama seperti fungsi ``fmt.Println()``, perbedaan fungsi ``fmt.Print()`` tidak menghasilkan baris baru di akhir output nya. <br>
+Perbedaan lainnya: nilai argument parameter yang ditulis saat pemanggilan fungsi akan di print tanpa pemisah. Tidak seperti pada fungsi ``fmt.Println()`` yang nilai argument parameter nya di pisah menggunakan karakter spasi.
+```go
+fmt.Println("Beryll Pradana Ramadhan")
+fmt.Println("Beryll", "Pradana", "Ramadhan")
+
+fmt.Print("Beryll Pradana Ramadhan\n")
+fmt.Print("Beryll ", "Pradana ", "Ramadhan\n")
+fmt.Print("Beryll", " ", "Ramadhan"\n)
+```
+
 
 <a href="https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html">Click untuk penjelasan lengkap nya!</a>
