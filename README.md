@@ -195,5 +195,130 @@ fmt.Print("Beryll ", "Pradana ", "Ramadhan\n")
 fmt.Print("Beryll", " ", "Ramadhan"\n)
 ```
 
+<h3>Looping</h3>
+Looping adalah proses mengulang-ulang suatu eksekusi blok tanpa henti, selama kondisi yang di jadikan acuan terpenuhi. Biasanya disiapkan variable untuk iterasi atau variable penanda kapan perulangan akan diberhentikan.
+<br>
+
+Di Go keyword perulangan hanya ``for`` saja, tetapi meski demikian, kemampuannya merupakan gabungan dari ``for``, ``foreach``, dan ``while`` ibarat bahasa pemrograman lain.
+- Looping menggunakan keyword ``for``
+
+```go
+// Example 1
+
+	for i := i = 0; i < 5; i++ {
+	    fmt.Println("Angka", i) //output: Angka 1, Angka 2, Angka 3, Angka 4, Angka 5
+	}
+```
+- Penggunaan Keyword ``for`` dengan Argumen hanya Kondisi
+Cara ke-2 adalah dengan menuliskan kondisi setelah keyword ``for`` (hanya kondisi). Deklarasi dan iterasi variable counter tidak di tuliskan setelah keyword, hanya kondisi perulangan saja. Konsep nya mirip seperti ``while`` milik bahasa lain.
+<br>
+
+Kode berikut adalah contoh ``for`` dengan argumen hanya kondisi (seperti ``if``), output yang dihasilkan akan sama seperti penerapan for pertama.
+```go
+// Example 2
+
+	var i = 0
+
+	for i < 5 {
+	   fmt.Println("Angka", 1) //output: Angka 1, Angka 2, Angka 3, Angka 4, Angka 5
+	   i++	
+	}
+```
+
+- Penggunaan Keyword ``for`` Tanpa Argumen
+Cara ke-3 adalah ``for`` di tulis tanpa kondisi. Dengan ini akan dihasilkan perulangan tanpa henti (sama dengan ``for true``). Pemberentian perulangan dilakukan dengan menggunakan keyword ``break``.
+```go
+// Example 3
+
+	var i = 0
+
+	for {
+	   fmt.Println("Angka", i)
+
+	   i++
+	   if i == 5 {
+		break
+	  }
+	}
+```
+Dalam perulangan tanpa henti di atas, variable i yang nilai awalnya 0 di-ingkrementasi. Ketika nilai ``i`` sudah mencapai ``5``, keyword ``break`` akan digunakan, dan Looping akan berhenti. 
+
+- Penggunaan Keyword ``for - range``
+cara ke-4 adalah perulangan dengan menggunakan kombinasi keyword ``for`` dan ``range``. Cara ini biasanya digunakan untuk melooping data gabungan (misalnya string, array, slice, map).
+```go
+// Example 4
+
+	var xs = "123" // String
+	for i, v := range xs {
+	   fmt.Println("Index=", i, "value=", v)
+	}
+
+	var ys = [5]int{10, 20, 30, 40, 50} //Array
+	for _, v := range ys {
+	   fmt.Println("Value=", v)
+	}
+
+	var zs = ys[0:2] // Slice
+	for _, v := range zs {
+	   fmt.println("Value", v)
+	}
+
+	var kvs = map[byte]int{'a': 0, 'b': 1, 'c': 2,} // map
+	for k, v := range kvs {
+	   fmt.Println("key=", k, "Value", v)
+	}
+
+	// Boleh juga baik k atau v nya di abaikan
+	for range kvs {
+	   fmt.Println("Done!")
+	}
+
+	// selain itu, bisa juga dengan cukup menentukan nilai numerik bilangan
+	for i := range 5 {
+	   fmt.Println(i) //output: 0, 1, 2, 3, 4
+	}
+```
+- Penggunaan keyword ``break`` & ``continue``
+Keyword ``break`` digunakan untuk memberhentikan paksa sebuah perulangan, sedangkan ``continue`` di pakai untuk memaksa maju perulangan berikutnya.
+<br>
+Berikut merupakan contoh penerapan ``continue`` dan ``break``. Kedua keyword tersebut dimanfaatkan untuk menampilkan angka genap berurutan yang lebih besar dari 0 dan kurang dari atau sama dengan 8.
+```go
+	for i := 1; 1 <= 10; i++ {
+	  if i % 2 == 1 
+		continue
+	  }
+
+	  if i > 8 {
+		break
+	  }
+
+	  fmt.Println("Angka", i) //output: Angka 2, Angka 4, Angka 6, Angka 8
+```
+Penjelasan kode di atas:
+1. Melakukan perulangan mulai angka 1 hingga 10 dengan ``i`` sebagai variable iterasi.
+2. Ketika ``i`` adalah ganjil (dapat diketahui dari ``1 % 2``, jika hasil nya ``1``, berati ganjil), maka akan dipaksa lanjut ke perulangan berikutnya.
+3. Ketika ``i`` lebih besar dari 8, maka perulangan akan berhenti.
+4. Nilai ``i`` ditampilkan.
+
+- Perulangan Bersarang
+Tidak hanya kondisi yang bisa bersarang, perulangan juga bisa. Cara pengaplikasiannnya kurang lebih sama, tinggal tulis blok statement perulangannya di dalam perulangan.
+```go
+// Example
+
+	for i:=0; i<5; i++ {
+	   for j:=i; j<5; j++ {
+		fmt.print(j, " ")
+	   }
+
+	   fmt.Println() //output: 	0 1 2 3 4
+					1 2 3 4
+					2 3 4
+					3 4
+					4
+					
+	}
+```
+Pada kode diatas, untuk pertama kalinya fungsi ``fmt.Println`` di panggil tanpa disisipkan parameter. Cara seperti ini bisa digunakan untuk menampilkan baris baru. Kegunaannya sama seperti output dari statement ``fmt.Print("\n")``.
+
 
 <a href="https://dasarpemrogramangolang.novalagung.com/A-tipe-data.html">Click untuk penjelasan lengkap nya!</a>
