@@ -181,9 +181,11 @@ const lastName = Ramadhan
 fmt.Print("Halo nama lengkap saya "), firstName, " ", midName, " ", lastName, "!\n" //output: Halo nama lengkap saya Beryll Pradana Ramadhan!
 ```
 <br>
+
 Penggunaan fungsi ``fmt.Print()`` <br>
 Fungsi ini memiliki peran yang sama seperti fungsi ``fmt.Println()``, perbedaan fungsi ``fmt.Print()`` tidak menghasilkan baris baru di akhir output nya. <br>
 Perbedaan lainnya: nilai argument parameter yang ditulis saat pemanggilan fungsi akan di print tanpa pemisah. Tidak seperti pada fungsi ``fmt.Println()`` yang nilai argument parameter nya di pisah menggunakan karakter spasi.
+
 ```go
 fmt.Println("Beryll Pradana Ramadhan")
 fmt.Println("Beryll", "Pradana", "Ramadhan")
