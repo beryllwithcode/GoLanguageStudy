@@ -282,6 +282,7 @@ cara ke-4 adalah perulangan dengan menggunakan kombinasi keyword ``for`` dan ``r
 Keyword ``break`` digunakan untuk memberhentikan paksa sebuah perulangan, sedangkan ``continue`` di pakai untuk memaksa maju perulangan berikutnya.
 <br>
 Berikut merupakan contoh penerapan ``continue`` dan ``break``. Kedua keyword tersebut dimanfaatkan untuk menampilkan angka genap berurutan yang lebih besar dari 0 dan kurang dari atau sama dengan 8.
+
 ```go
 	for i := 1; 1 <= 10; i++ {
 	  if i % 2 == 1 
@@ -294,6 +295,7 @@ Berikut merupakan contoh penerapan ``continue`` dan ``break``. Kedua keyword ter
 
 	  fmt.Println("Angka", i) //output: Angka 2, Angka 4, Angka 6, Angka 8
 ```
+
 Penjelasan kode di atas:
 1. Melakukan perulangan mulai angka 1 hingga 10 dengan ``i`` sebagai variable iterasi.
 2. Ketika ``i`` adalah ganjil (dapat diketahui dari ``1 % 2``, jika hasil nya ``1``, berati ganjil), maka akan dipaksa lanjut ke perulangan berikutnya.
@@ -302,6 +304,7 @@ Penjelasan kode di atas:
 
 - Perulangan Bersarang
 Tidak hanya kondisi yang bisa bersarang, perulangan juga bisa. Cara pengaplikasiannnya kurang lebih sama, tinggal tulis blok statement perulangannya di dalam perulangan.
+
 ```go
 // Example
 
@@ -311,10 +314,10 @@ Tidak hanya kondisi yang bisa bersarang, perulangan juga bisa. Cara pengaplikasi
 	   }
 
 	   fmt.Println() //output: 	0 1 2 3 4
-					1 2 3 4
-					2 3 4
-					3 4
-					4
+			//		1 2 3 4
+			//		2 3 4
+			//		3 4
+			//		4
 					
 	}
 ```
